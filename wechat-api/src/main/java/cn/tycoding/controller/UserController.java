@@ -1,11 +1,9 @@
-package cn.tycoding.biz.controller;
+package cn.tycoding.controller;
 
-import cn.tycoding.common.controller.BaseController;
 import cn.tycoding.common.exception.GlobalException;
-import cn.tycoding.common.utils.QueryPage;
 import cn.tycoding.common.utils.R;
-import cn.tycoding.biz.entity.SysUser;
-import cn.tycoding.biz.service.UserService;
+import cn.tycoding.entity.SysUser;
+import cn.tycoding.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +16,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController extends BaseController {
+public class UserController {
 
     @Autowired
     private UserService userService;
@@ -26,19 +24,12 @@ public class UserController extends BaseController {
     @GetMapping("/info")
     public R getInfo() {
         Map<String, Object> map = new HashMap<>();
-        map.put("token", this.getSession().getId());
-        map.put("user", this.getCurrentUser());
         return new R<>(map);
     }
 
     @GetMapping("/{id}")
     public R findById(@PathVariable Long id) {
         return new R<>(userService.getById(id));
-    }
-
-    @PostMapping("/list")
-    public R findByPage(@RequestBody SysUser sysUser, QueryPage queryPage) {
-        return new R<>(super.getData(userService.list(sysUser, queryPage)));
     }
 
     @GetMapping("/findByName")

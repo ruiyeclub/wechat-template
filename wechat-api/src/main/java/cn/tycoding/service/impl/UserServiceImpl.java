@@ -1,11 +1,10 @@
-package cn.tycoding.biz.service.impl;
+package cn.tycoding.service.impl;
 
 import cn.tycoding.common.exception.GlobalException;
-import cn.tycoding.common.utils.MD5Util;
 import cn.tycoding.common.utils.QueryPage;
-import cn.tycoding.biz.entity.SysUser;
-import cn.tycoding.biz.mapper.UserMapper;
-import cn.tycoding.biz.service.UserService;
+import cn.tycoding.entity.SysUser;
+import cn.tycoding.mapper.UserMapper;
+import cn.tycoding.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -35,8 +34,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SysUser> implements
             throw new GlobalException("该用户名已存在");
         }
         // 加密
-        String encrypt_password = MD5Util.encryptPassword(sysUser.getUsername(), sysUser.getPassword());
-        sysUser.setPassword(encrypt_password);
         userMapper.insert(sysUser);
     }
 
@@ -62,8 +59,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, SysUser> implements
     public void update(SysUser sysUser) {
         if (sysUser.getPassword() != null && sysUser.getUsername() != null) {
             // 加密
-            String encrypt_password = MD5Util.encryptPassword(sysUser.getUsername(), sysUser.getPassword());
-            sysUser.setPassword(encrypt_password);
         } else {
             sysUser.setPassword(null);
         }

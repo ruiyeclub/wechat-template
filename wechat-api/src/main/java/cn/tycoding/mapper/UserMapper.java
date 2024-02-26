@@ -1,6 +1,6 @@
-package cn.tycoding.biz.mapper;
+package cn.tycoding.mapper;
 
-import cn.tycoding.biz.entity.SysUser;
+import cn.tycoding.entity.SysUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

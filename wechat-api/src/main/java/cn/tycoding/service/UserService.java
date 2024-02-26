@@ -1,7 +1,7 @@
-package cn.tycoding.biz.service;
+package cn.tycoding.service;
 
 import cn.tycoding.common.utils.QueryPage;
-import cn.tycoding.biz.entity.SysUser;
+import cn.tycoding.entity.SysUser;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
