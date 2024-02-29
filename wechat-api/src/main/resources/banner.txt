@@ -5,7 +5,7 @@
 |__/|__/\___/\___/_/ /_/\__,_/\__/  /_/  |_/ .___/ .___/    /_/  \___/_/ /_/ /_/ .___/_/\__,_/\__/\___/
                                           /_/   /_/                           /_/
 
-   Author: TyCoding
-   Blog: http://tycoding.cn
-   Github: https://github.com/tycoding
-   QQ group: 671017003
+   Author: Cr.
+   Blog: http://ruiyeclub.cn
+   Github: https://github.com/ruiyeclub
+   QQ group: 185048761
